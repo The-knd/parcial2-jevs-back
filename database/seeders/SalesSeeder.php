@@ -18,6 +18,7 @@ class SalesSeeder extends Seeder
         $sale = new Sale();
         $sale->nombre_cliente="Pedro";
         $sale->nombre_empleado="Ramiro";
+        $sale->producto="Agua";
         $sale->precio=500000;
         $sale->fecha_compra="2023-05-08";
         $sale->save();

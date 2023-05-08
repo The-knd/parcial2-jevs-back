@@ -23,7 +23,8 @@ class SalesController extends Controller
     {
         $sale = new Sale();
         $sale->nombre_empleado=$request->nombre_empleado;
-        $sale->nombre_empleado=$request->nombre_empleado;
+        $sale->nombre_cliente=$request->nombre_cliente;
+        $sale->producto=$request->producto;
         $sale->precio=$request->precio;
         $sale->fecha_compra=$request->fecha_compra;
         $sale->save();
@@ -44,15 +45,16 @@ class SalesController extends Controller
     {
         $sale = Sale::find($sale->id);
         $sale->nombre_empleado=$request->nombre_empleado;
-        $sale->nombre_empleado=$request->nombre_empleado;
+        $sale->nombre_cliente=$request->nombre_cliente;
+        $sale->producto=$request->producto;
         $sale->precio=$request->precio;
         $sale->fecha_compra=$request->fecha_compra;
         $sale->save();
     }
 
-    public function destroy(Sale $sale)
+    public function destroy($id)
     {
-        $sale = Sale::find($sale->id);
+        $sale = Sale::find($id);
         $sale->delete();
     }
 
